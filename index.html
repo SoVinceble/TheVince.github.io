@@ -1,7 +1,105 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<!-- define our angular app and set the controller -->
+<html ng-app="bitcoinCalculator" ng-controller="bitcoinController">
+  <head>
+    <title>Bitcoin Investment Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheets -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+      
+    </head>
+  <body>
+
+    <div class="jumbotron">
+
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h1>Bitcoin Investment<br>Calculator</h1>
+          <br><br>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="col-sm-6">
+            <form role="form">
+              <label for="starting-investment">Initial Investment (Kz)</label>
+              <input type="number" ng-model="initalAmt" class="form-control" placeholder="{{initalAmt}}">
+            </form>
+            <br>
+            <div>Current Price (Kz):
+                
+                <span class="number">
+                    
+                    {{currRate| number:2  }} kz
+                    
+                </span>
+            </div>
+          </div>
+          
+        </div>
+          
+        <!--  <div class="col-sm-6" align="center" valign="center">
+            <img src="img/btc.png" width="100">
+          </div> -->
+      </div>
+        
+        
+
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <br><br>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Price of 1 BTC</th>
+                <th>Starting Investment</th>
+                <th>Profit (+) / Loss (-)</th>
+              </tr>
+            </thead>
+              <tbody>
+                <tr>
+                  <td> 100,000 kz</td>
+                  <td>{{ newAmt( 100000) | number:2  }} kz</td>
+                  <td>{{ profit( 100000) | number:2  }} kz</td>
+                </tr>
+                <tr>
+                  <td>500,000 kz</td>
+                  <td>{{ newAmt(500000) | number:2  }} kz</td>
+                  <td>{{ profit(500000) | number:2  }} kz</td>
+                </tr>
+                <tr>
+                  <td>1,000,000 kz</td>
+                  <td>{{ newAmt(1000000) | number:2  }} kz</td>
+                  <td>{{ profit(1000000) | number:2  }} kz</td>
+                </tr>
+                <tr>
+                  <td>25,000,000 kz</td>
+                  <td>{{ newAmt(25000000) | number:2  }} kz</td>
+                  <td>{{ profit(25000000) | number:2  }} kz</td>
+                </tr>
+                <tr>
+                  <td>50,000,000 kz</td>
+                  <td>{{ newAmt(50000000) | number:2  }} kz</td>
+                  <td>{{ profit(50000000) | number:2  }} kz</td>
+                </tr>
+              </tbody>
+          </table>
+          <span>* IF the price of 1 Bitcoin reaches X, THEN your starting investment becomes X AND your profit becomes X.</span>
+        </div>
+          
+          
+      </div>
+        
+            
+    </div>
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
 </html>
