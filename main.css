@@ -18,3 +18,7 @@ input {
 .chart {
   height: 400px;
 }
+
+#rate{
+    width:500px;
+}

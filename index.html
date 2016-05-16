@@ -9,7 +9,11 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.css">
     <link rel="stylesheet" type="text/css" href="main.css">
-      
+      <div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </head>
   <body>
 
@@ -30,11 +34,19 @@
               <input type="number" ng-model="initalAmt" class="form-control" placeholder="{{initalAmt}}">
             </form>
             <br>
-            <div>Current Price (Kz):
+            <div id = rate>
                 
                 <span class="number">
                     
-                    {{currRate| number:2  }} kz
+                    1 BTC (Bitcoin)
+                    
+                </span>
+                
+                =
+                
+                <span class="number">
+                    
+                    {{currRate| number:2  }} kz (Kwanzas)
                     
                 </span>
             </div>
